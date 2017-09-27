@@ -5,3 +5,4 @@ tags:
 ---
 > es6-export、闭包
 <!-- more -->
+## es6-export、闭包
