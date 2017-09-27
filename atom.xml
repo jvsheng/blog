@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://jvsheng.github.io/blog/"/>
-  <updated>2017-09-27T06:46:01.093Z</updated>
+  <updated>2017-09-27T06:48:27.927Z</updated>
   <id>http://jvsheng.github.io/blog/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Element-ui源码分析-util.clickoutside</title>
-    <link href="http://jvsheng.github.io/blog/2017/09/27/Element-ui%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-util-clickoutside/"/>
-    <id>http://jvsheng.github.io/blog/2017/09/27/Element-ui源码分析-util-clickoutside/</id>
-    <published>2017-09-27T06:46:01.000Z</published>
-    <updated>2017-09-27T06:46:01.093Z</updated>
+    <title>&#39;Element-ui源码分析 - loading&#39;</title>
+    <link href="http://jvsheng.github.io/blog/2017/09/27/Element-ui%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-loading/"/>
+    <id>http://jvsheng.github.io/blog/2017/09/27/Element-ui源码分析-loading/</id>
+    <published>2017-09-27T06:48:08.000Z</published>
+    <updated>2017-09-27T06:48:27.927Z</updated>
     
     <summary type="html">
     
@@ -31,11 +31,25 @@
   </entry>
   
   <entry>
-    <title>Element-ui源码分析-单元测试</title>
+    <title>Element-ui源码分析 - util.clickoutside</title>
+    <link href="http://jvsheng.github.io/blog/2017/09/27/Element-ui%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-util-clickoutside/"/>
+    <id>http://jvsheng.github.io/blog/2017/09/27/Element-ui源码分析-util-clickoutside/</id>
+    <published>2017-09-27T06:46:01.000Z</published>
+    <updated>2017-09-27T06:48:27.999Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Element-ui源码分析 - 单元测试</title>
     <link href="http://jvsheng.github.io/blog/2017/09/24/Element-ui%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
     <id>http://jvsheng.github.io/blog/2017/09/24/Element-ui源码分析-单元测试/</id>
     <published>2017-09-23T16:27:07.000Z</published>
-    <updated>2017-09-27T06:43:09.619Z</updated>
+    <updated>2017-09-27T06:48:27.975Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>1.Element自定义的测试工具函数<br>2.如何测试自定义指令<br>3.Mocha测试框架<br>4.Chai断言库<br><a id="more"></a></p></blockquote><h2 id="Element自定义的测试工具函数"><a href="#Element自定义的测试工具函数" class="headerlink" title="Element自定义的测试工具函数"></a>Element自定义的测试工具函数</h2><h2 id="如何测试自定义指令"><a href="#如何测试自定义指令" class="headerlink" title="如何测试自定义指令"></a>如何测试自定义指令</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'create'</span>, () =&gt; &#123;</div><div class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</div><div class="line">  <span class="keyword">const</span> el = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line">  <span class="keyword">const</span> vnode = &#123;</div><div class="line">    context: &#123;</div><div class="line">      handleClick: <span class="function"><span class="params">()</span> =&gt;</span> ++count</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">const</span> binding = &#123;</div><div class="line">    expression: <span class="string">'handleClick'</span></div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  Clickoutside.bind(el, binding, vnode);</div><div class="line">  expect(el[ctx]).to.exist;</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>这需要跳出Vue的思维，观察源代码，可以发现，自定义指令的js文件中只是export了bind、update、unbind方法，但是绑定指令到Vue是通过<code>directives: { Clickoutside }</code>。  </p><p>所以，<strong>可以直接调用bind等方法，进行元素指令的绑定</strong>，就可以编写相应的测试用例了。</p><h2 id="Mocha测试框架"><a href="#Mocha测试框架" class="headerlink" title="Mocha测试框架"></a>Mocha测试框架</h2><h2 id="Chai断言库"><a href="#Chai断言库" class="headerlink" title="Chai断言库"></a>Chai断言库</h2>]]></content>
     
