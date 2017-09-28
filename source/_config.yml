@@ -85,5 +85,5 @@ archive_generator:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:jvsheng/blog.git
+  repo: https://github.com/jvsheng/blog.git
   branch: gh-pages
