@@ -3,10 +3,11 @@ title: Element-ui源码分析 - 单元测试
 date: 2017-09-24 00:27:07
 tags:
 ---
-> 1.测试的工具函数  
-> 2.如何测试自定义指令  
-> 3.Mocha测试框架  
-> 4.Chai断言库  
++ <code>测试的工具函数</code>  
++ <code>如何测试自定义指令</code>  
++ <code>Mocha测试框架  
++ <code>Chai断言库</code>  
+  
 <!-- more -->
 
 ## 测试的工具函数
