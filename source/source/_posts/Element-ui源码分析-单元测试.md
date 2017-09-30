@@ -51,7 +51,7 @@ describe('Array', function() {
 
 ## Chai断言库
 ```javascript
-expect(4 + 5).to.be.equal(9);
+expect(4 + 5).to.equal(9);
 ```
 下面是一些目前遇到的断言语法：
 + equal(value) - 断言目标严格等于(===)value 
