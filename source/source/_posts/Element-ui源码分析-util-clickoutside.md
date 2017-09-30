@@ -3,7 +3,7 @@ title: Element-ui源码分析 - util.clickoutside
 date: 2017-09-27 14:46:01
 tags:
 ---
-+ <code>es6-export、闭包</code>  
++ es6-export、闭包  
 
 <!-- more -->
 ## es6-export、闭包
