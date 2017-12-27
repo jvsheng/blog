@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://jvsheng.github.io/blog/"/>
-  <updated>2017-09-30T08:29:58.516Z</updated>
+  <updated>2017-12-27T06:38:23.206Z</updated>
   <id>http://jvsheng.github.io/blog/</id>
   
   <author>
@@ -17,76 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>element-ui loading组件</title>
+    <link href="http://jvsheng.github.io/blog/2017/12/24/element-ui%20loading%E7%BB%84%E4%BB%B6/"/>
+    <id>http://jvsheng.github.io/blog/2017/12/24/element-ui loading组件/</id>
+    <published>2017-12-24T12:27:37.000Z</published>
+    <updated>2017-12-27T06:38:23.206Z</updated>
+    
+    <content type="html"><![CDATA[<script async src="//jsfiddle.net/Viajes/4yn8uybL/embed/html,css,result/"></script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script async src=&quot;//jsfiddle.net/Viajes/4yn8uybL/embed/html,css,result/&quot;&gt;&lt;/script&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript正则表达式 - 笔记</title>
     <link href="http://jvsheng.github.io/blog/2017/09/29/JavaScript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-%E7%AC%94%E8%AE%B0/"/>
     <id>http://jvsheng.github.io/blog/2017/09/29/JavaScript正则表达式-笔记/</id>
     <published>2017-09-29T09:40:22.000Z</published>
-    <updated>2017-09-30T08:29:58.516Z</updated>
+    <updated>2017-12-27T06:37:28.126Z</updated>
     
-    <content type="html"><![CDATA[<ul><li>正则表达式括号的作用  </li><li>回溯  </li></ul><a id="more"></a><h2 id="可视化工具"><a href="#可视化工具" class="headerlink" title="可视化工具"></a><strong>可视化工具</strong></h2><iframe frameborder="0" width="348" height="208" src="https://jex.im/regulex/#!embed=true&flags=&re=%5E(a%7Cb)*%3F%24"></iframe><h2 id="正则表达式括号的作用"><a href="#正则表达式括号的作用" class="headerlink" title="正则表达式括号的作用"></a><strong>正则表达式括号的作用</strong></h2><p><code>提取数据、JS中引用、正则表达式中反向引用</code></p><h4 id="1-1-分组"><a href="#1-1-分组" class="headerlink" title="1.1 分组"></a><strong>1.1 分组</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/(ab)+<span class="regexp">/</span></div></pre></td></tr></table></figure><p>这里括号的作用在于，使 <code>+</code> 量词作用于 ab 这个整体</p><h4 id="1-2-分支结构"><a href="#1-2-分支结构" class="headerlink" title="1.2 分支结构"></a><strong>1.2 分支结构</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/(a|b)/</div></pre></td></tr></table></figure><p>提供分支表达式的所有可能</p><h4 id="2-1-分组引用"><a href="#2-1-分组引用" class="headerlink" title="2.1 分组引用"></a><strong>2.1 分组引用</strong></h4><p><img src="/blog/img/17.9.30.1.jpg" alt="正则表达式分组"><br>正则引擎在匹配过程中，会为每一个分组开辟一个空间，用来存储每一个分组匹配到的数据。</p><h4 id="2-2-API中引用数据"><a href="#2-2-API中引用数据" class="headerlink" title="2.2 API中引用数据"></a><strong>2.2 API中引用数据</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"2017-06-12"</span>;</div><div class="line"><span class="built_in">console</span>.log(string.match(regex));</div><div class="line"><span class="comment">// =&gt;  ["2017-06-12", "2017", "06", "12", index: 0, input: "2017-06-12"]</span></div></pre></td></tr></table></figure><blockquote><p><code>match</code> 返回的一个数组，第一个元素是整体匹配结果，然后是各个分组（括号里）匹配的<br>  内容，然后是匹配下标，最后是输入的文本。另外，正则表达式是否有修饰符 <code>g</code>，match<br>  返回的数组格式是不一样的。</p></blockquote><p>在运行一次正则操作后，RegExp对象上就可以通过<code>$1</code>访问匹配到的分组数据。我们可以在replace的第二个参数中，通过<code>函数</code>使用这些数据，进行替换等操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"2017-06-12"</span>;</div><div class="line"><span class="keyword">var</span> result = string.replace(regex, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"><span class="keyword">return</span> <span class="built_in">RegExp</span>.$<span class="number">2</span> + <span class="string">"/"</span> + <span class="built_in">RegExp</span>.$<span class="number">3</span> + <span class="string">"/"</span> + <span class="built_in">RegExp</span>.$<span class="number">1</span>;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "06/12/2017</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"2017-06-12"</span>;</div><div class="line"><span class="keyword">var</span> result = string.replace(regex, <span class="function"><span class="keyword">function</span> (<span class="params">match, year, month, day</span>) </span>&#123;</div><div class="line"><span class="keyword">return</span> month + <span class="string">"/"</span> + day + <span class="string">"/"</span> + year;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "06/12/2017"</span></div></pre></td></tr></table></figure></p><p>特别注意下上面第二个示例中，函数的参数和match返回值的顺序与对应关系。</p><h4 id="2-3-正则中反向引用"><a href="#2-3-正则中反向引用" class="headerlink" title="2.3 正则中反向引用"></a><strong>2.3 正则中反向引用</strong></h4><p>除了使用相应API来引用分组，也可以在正则本身里引用分组，但只能引用之前出现的分组，即反向引用。<br>示例，需要一个正则表达式，匹配分隔符前后一致的时间字符串：<br><img src="/blog/img/17.9.30.2.jpg" alt="反向引用"></p><ul><li><p><code>括号嵌套</code><br>可以理解成，反向引用是引用的括号分组起来的数据，最外层的括号级别最高，所以，\1代表的是最外层的分组</p></li><li><p><code>\10的含义</code><br>\10表示第10个分组，如果要匹配\1 和 0，使用(?:\1)0</p></li><li><p><code>引用不存在的分组</code><br>在正则里引用不存在的分组时，不会报错，只是匹配反向引用的字符本身（\2就匹配’\2’）</p></li><li><p><code>分组后有量词</code><br>分组后有量词的话，分组最终捕获到的数据是最后一次的匹配。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(\d)+ \1/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"12345 1"</span>) );</div><div class="line"><span class="comment">// =&gt; false</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"12345 5"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure></li><li><p><code>非捕获括号</code><br>正则中出现的括号，都会捕获它们匹配到的数据，以便后续引用，称之为捕获型分组<br>如果只想要括号最原始的功能，不引用它，既不在API里引用，也不在正则里反向引用。</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;正则表达式括号的作用  &lt;/li&gt;
-&lt;li&gt;回溯  &lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Element-ui源码分析 - loading</title>
-    <link href="http://jvsheng.github.io/blog/2017/09/27/Element-ui%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-loading/"/>
-    <id>http://jvsheng.github.io/blog/2017/09/27/Element-ui源码分析-loading/</id>
-    <published>2017-09-27T06:48:08.000Z</published>
-    <updated>2017-09-27T06:50:11.923Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Element-ui源码分析 - util.clickoutside</title>
-    <link href="http://jvsheng.github.io/blog/2017/09/27/Element-ui%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-util-clickoutside/"/>
-    <id>http://jvsheng.github.io/blog/2017/09/27/Element-ui源码分析-util-clickoutside/</id>
-    <published>2017-09-27T06:46:01.000Z</published>
-    <updated>2017-09-30T01:21:14.661Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>es6-export、闭包  </li></ul><a id="more"></a><h2 id="es6-export、闭包"><a href="#es6-export、闭包" class="headerlink" title="es6-export、闭包"></a>es6-export、闭包</h2>]]></content>
+    <content type="html"><![CDATA[<ul><li>可视化工具</li><li>正则表达式括号的作用</li><li>正则表达式回溯</li></ul><a id="more"></a><h2 id="可视化工具"><a href="#可视化工具" class="headerlink" title="可视化工具"></a><strong>可视化工具</strong></h2><iframe frameborder="0" width="348" height="208" src="https://jex.im/regulex/#!embed=true&flags=&re=%5E(a%7Cb)*%3F%24"></iframe><hr><h2 id="正则表达式括号的作用"><a href="#正则表达式括号的作用" class="headerlink" title="正则表达式括号的作用"></a><strong>正则表达式括号的作用</strong></h2><p><code>提取数据、JS中引用、正则表达式中反向引用</code></p><p><strong>1.1 分组</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/(ab)+<span class="regexp">/</span></div></pre></td></tr></table></figure></p><p>这里括号的作用在于，使 <code>+</code> 量词作用于 ab 这个整体</p><p><strong>1.2 分支结构</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/(a|b)/</div></pre></td></tr></table></figure></p><p>提供分支表达式的所有可能</p><p><strong>2.1 分组引用</strong></p><p><img src="/blog/img/17.9.30.1.jpg" alt="正则表达式分组"><br>正则引擎在匹配过程中，会为每一个分组开辟一个空间，用来存储每一个分组匹配到的数据。</p><p><strong>2.2 API中引用数据</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"2017-06-12"</span>;</div><div class="line"><span class="built_in">console</span>.log(string.match(regex));</div><div class="line"><span class="comment">// =&gt;  ["2017-06-12", "2017", "06", "12", index: 0, input: "2017-06-12"]</span></div></pre></td></tr></table></figure></p><blockquote><p><code>match</code> 返回的一个数组，第一个元素是整体匹配结果，然后是各个分组（括号里）匹配的<br>  内容，然后是匹配下标，最后是输入的文本。另外，正则表达式是否有修饰符 <code>g</code>，match<br>  返回的数组格式是不一样的。</p></blockquote><p>在运行一次正则操作后，RegExp对象上就可以通过<code>$1</code>访问匹配到的分组数据。我们可以在replace的第二个参数中，通过<code>函数</code>使用这些数据，进行替换等操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"2017-06-12"</span>;</div><div class="line"><span class="keyword">var</span> result = string.replace(regex, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"><span class="keyword">return</span> <span class="built_in">RegExp</span>.$<span class="number">2</span> + <span class="string">"/"</span> + <span class="built_in">RegExp</span>.$<span class="number">3</span> + <span class="string">"/"</span> + <span class="built_in">RegExp</span>.$<span class="number">1</span>;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "06/12/2017</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span>;</div><div class="line"><span class="keyword">var</span> string = <span class="string">"2017-06-12"</span>;</div><div class="line"><span class="keyword">var</span> result = string.replace(regex, <span class="function"><span class="keyword">function</span> (<span class="params">match, year, month, day</span>) </span>&#123;</div><div class="line"><span class="keyword">return</span> month + <span class="string">"/"</span> + day + <span class="string">"/"</span> + year;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// =&gt; "06/12/2017"</span></div></pre></td></tr></table></figure></p><p>特别注意下上面第二个示例中，函数的参数和match返回值的顺序与对应关系。</p><p><strong>2.3 正则中反向引用</strong></p><p>除了使用相应API来引用分组，也可以在正则本身里引用分组，但只能引用之前出现的分组，即反向引用。<br>示例，需要一个正则表达式，匹配分隔符前后一致的时间字符串：<br><img src="/blog/img/17.9.30.2.jpg" alt="反向引用"></p><ul><li><p><code>括号嵌套</code><br>可以理解成，反向引用是引用的括号分组起来的数据，最外层的括号级别最高，所以，\1代表的是最外层的分组</p></li><li><p><code>\10的含义</code><br>\10表示第10个分组，如果要匹配\1 和 0，使用(?:\1)0</p></li><li><p><code>引用不存在的分组</code><br>在正则里引用不存在的分组时，不会报错，只是匹配反向引用的字符本身（\2就匹配’\2’）</p></li><li><p><code>分组后有量词</code><br>分组后有量词的话，分组最终捕获到的数据是最后一次的匹配。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> regex = <span class="regexp">/(\d)+ \1/</span>;</div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"12345 1"</span>) );</div><div class="line"><span class="comment">// =&gt; false</span></div><div class="line"><span class="built_in">console</span>.log( regex.test(<span class="string">"12345 5"</span>) );</div><div class="line"><span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure></li><li><p><code>非捕获括号</code><br>正则中出现的括号，都会捕获它们匹配到的数据，以便后续引用，称之为捕获型分组<br>如果只想要括号最原始的功能，不引用它，既不在API里引用，也不在正则里反向引用。</p></li></ul><hr><h2 id="正则表达式回溯"><a href="#正则表达式回溯" class="headerlink" title="正则表达式回溯"></a><strong>正则表达式回溯</strong></h2><p>本质上就是深度优先搜索算法。其中退到之前的某一步这一过程，我们称为“回溯”。从下图中，可以看出，路走不通时，就会发生“回溯”。即，尝试匹配失败时，接下来的一步通常就是回溯。</p><p><strong>1.1 有回溯的匹配</strong><br><img src="/blog/img/17.10.7.1.jpg" alt="有回溯的匹配"></p><p><strong>2.1 常见的回溯形式</strong></p><ul><li><p><code>贪婪量词，b{1,3}</code><br>因为其是贪婪的，尝试可能的顺序是从多往少的方向去尝试。首先会尝试 “bbb”，然后再看整个正则是否能匹配。不能匹配时，吐出一个 “b”，即在 “bb” 的基础上，再继续尝试。如果还不行，再吐出一个，再试。如果还不行呢？只能说明匹配失败了。</p></li><li><p><code>惰性量词， \d{1,3}?</code><br>惰性量词就是在贪婪量词后面加个问号，表示尽可能少的匹配。<br>虽然惰性量词不贪，但也会有回溯的现象。<br>知道你不贪、很知足，但是为了整体匹配成，没办法，也只能给你多塞点了。因此最后 \d{1,3}? 匹配的字符是 “12”，是两个数字，而不是一个。</p></li><li><p><code>分支结构，/can|candy/</code><br>分支结构，可能前面的子模式会形成了局部匹配，如果接下来表达式整体不匹配时，仍会继续尝试剩下的分支。这种尝试也可以看成一种回溯。</p></li></ul>]]></content>
     
     <summary type="html">
     
       &lt;ul&gt;
-&lt;li&gt;es6-export、闭包  &lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Element-ui源码分析 - 单元测试</title>
-    <link href="http://jvsheng.github.io/blog/2017/09/24/Element-ui%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
-    <id>http://jvsheng.github.io/blog/2017/09/24/Element-ui源码分析-单元测试/</id>
-    <published>2017-09-23T16:27:07.000Z</published>
-    <updated>2017-09-30T05:31:02.648Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>测试的工具函数</li><li>如何测试自定义指令  </li><li>Mocha测试框架  </li><li>Chai断言库  </li></ul><a id="more"></a><h2 id="测试的工具函数"><a href="#测试的工具函数" class="headerlink" title="测试的工具函数"></a>测试的工具函数</h2><h2 id="如何测试自定义指令"><a href="#如何测试自定义指令" class="headerlink" title="如何测试自定义指令"></a>如何测试自定义指令</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'create'</span>, () =&gt; &#123;</div><div class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</div><div class="line">  <span class="keyword">const</span> el = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line">  <span class="keyword">const</span> vnode = &#123;</div><div class="line">    context: &#123;</div><div class="line">      handleClick: <span class="function"><span class="params">()</span> =&gt;</span> ++count</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">const</span> binding = &#123;</div><div class="line">    expression: <span class="string">'handleClick'</span></div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  Clickoutside.bind(el, binding, vnode);</div><div class="line">  expect(el[ctx]).to.exist;</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p>这需要跳出Vue的思维，观察源代码，可以发现，自定义指令的js文件中只是export了bind、update、unbind方法，但是绑定指令到Vue是通过<code>directives: { Clickoutside }</code>。  </p><p>所以，<code>可以直接调用bind等方法，进行元素指令的绑定</code>，就可以编写相应的测试用例了。</p><h2 id="Mocha测试框架"><a href="#Mocha测试框架" class="headerlink" title="Mocha测试框架"></a>Mocha测试框架</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">describe(<span class="string">'Array'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  describe(<span class="string">'#indexOf()'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    it(<span class="string">'should return -1 when the value is not present'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      expect([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].indexOf(<span class="number">5</span>)).to.equal(<span class="number">-1</span>);</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure><p><code>describe函数</code>的第一个参数会被输出在控制台中，作为一个用例集的描述，而且这个描述是可以根据自己的需求来嵌套输出的，称之为：<code>用例集定义函数</code>。</p><p><code>it函数</code>第一个参数用来输出一个用例的描述，前边打个对勾代表测试通过，第二个参数是一个函数，用来编写用例内容，用断言模块来判断结果的正确性，称之为：<code>用例函数</code>。<br><img src="/blog/img/17.9.27.png" alt="测试运行结果"></p><h2 id="Chai断言库"><a href="#Chai断言库" class="headerlink" title="Chai断言库"></a>Chai断言库</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">expect(<span class="number">4</span> + <span class="number">5</span>).to.equal(<span class="number">9</span>);</div></pre></td></tr></table></figure><p>下面是一些目前遇到的断言语法：</p><ul><li>equal(value) - 断言目标严格等于(===)value </li><li>exist - 断言目标存在，即非null也非undefined  </li></ul><p>断言的使用都是相同的套路，<code>to</code>是链接词，没有其他的作用，只是提高可读性。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;测试的工具函数&lt;/li&gt;
-&lt;li&gt;如何测试自定义指令  &lt;/li&gt;
-&lt;li&gt;Mocha测试框架  &lt;/li&gt;
-&lt;li&gt;Chai断言库  &lt;/li&gt;
+&lt;li&gt;可视化工具&lt;/li&gt;
+&lt;li&gt;正则表达式括号的作用&lt;/li&gt;
+&lt;li&gt;正则表达式回溯&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
