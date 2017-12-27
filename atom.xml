@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://jvsheng.github.io/blog/"/>
-  <updated>2017-12-27T06:48:35.571Z</updated>
+  <updated>2017-12-27T06:51:54.206Z</updated>
   <id>http://jvsheng.github.io/blog/</id>
   
   <author>
@@ -21,16 +21,17 @@
     <link href="http://jvsheng.github.io/blog/2017/12/27/element-ui%20collapse%E7%BB%84%E4%BB%B6/"/>
     <id>http://jvsheng.github.io/blog/2017/12/27/element-ui collapse组件/</id>
     <published>2017-12-27T06:39:47.000Z</published>
-    <updated>2017-12-27T06:48:35.571Z</updated>
+    <updated>2017-12-27T06:51:54.206Z</updated>
     
-    <content type="html"><![CDATA[<ul><li>Vue过渡动画钩子函数</li><li>自定义dispatch与broadcast</li><li>provide/inject的高阶使用<a id="more"></a></li></ul>]]></content>
+    <content type="html"><![CDATA[<ul><li>Vue过渡动画钩子函数</li><li>自定义dispatch与broadcast</li><li>provide/inject的高阶使用</li></ul><a id="more"></a>]]></content>
     
     <summary type="html">
     
       &lt;ul&gt;
 &lt;li&gt;Vue过渡动画钩子函数&lt;/li&gt;
 &lt;li&gt;自定义dispatch与broadcast&lt;/li&gt;
-&lt;li&gt;provide/inject的高阶使用
+&lt;li&gt;provide/inject的高阶使用&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -42,16 +43,17 @@
     <link href="http://jvsheng.github.io/blog/2017/12/24/element-ui%20loading%E7%BB%84%E4%BB%B6/"/>
     <id>http://jvsheng.github.io/blog/2017/12/24/element-ui loading组件/</id>
     <published>2017-12-24T12:27:37.000Z</published>
-    <updated>2017-12-27T06:46:31.704Z</updated>
+    <updated>2017-12-27T06:51:54.163Z</updated>
     
-    <content type="html"><![CDATA[<ul><li>svg画loading动画</li><li>封装Vue指令与插件</li><li>Vue.extend的应用<a id="more"></a><script async src="//jsfiddle.net/Viajes/4yn8uybL/embed/html,css,result/"></script></li></ul>]]></content>
+    <content type="html"><![CDATA[<ul><li>svg画loading动画</li><li>封装Vue指令与插件</li><li>Vue.extend的应用</li></ul><a id="more"></a><script async src="//jsfiddle.net/Viajes/4yn8uybL/embed/html,css,result/"></script>]]></content>
     
     <summary type="html">
     
       &lt;ul&gt;
 &lt;li&gt;svg画loading动画&lt;/li&gt;
 &lt;li&gt;封装Vue指令与插件&lt;/li&gt;
-&lt;li&gt;Vue.extend的应用
+&lt;li&gt;Vue.extend的应用&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
