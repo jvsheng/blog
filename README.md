@@ -5,8 +5,7 @@
 1. [**collapse组件**（过渡效果钩子函数、provide/inject、自定义dispatch/broadcast）](https://github.com/jvsheng/blog/issues/1)
 2. [**loading组件**（svg动画、自定义指令、Vue.extend应用）](https://github.com/jvsheng/blog/issues/2)
 
-
-
+<br>
 ## [前端工程化](https://github.com/jvsheng/blog/labels/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96)
 
 1. [webpack下配置eslint]()
